@@ -117,8 +117,27 @@ function goBack() {
         tab.style.position = 'static';
         tab.style.display = 'block';
     });
+
+    // limpiar contentido
+    document.getElementById('opcion1').innerHTML = '';
+    document.getElementById("opcion2").innerHTML = "";
+
+    //limpiar inputs
+    document.getElementById('numeroInput').value = '';
+    document.getElementById('percentage').value = '';
+    document.getElementById('dailyValue').value = '';
+    document.getElementById('daysCount').value = '';
+    document.getElementById('range').value = '';
+    document.getElementById('x_value').value = '';
+    document.getElementById('numb_y').value = '';
+    document.getElementById('range2').value = '';
+
+
     document.getElementById("backButton").style.display = "none";
+    
 }
+
+document.getElementById('backButton').addEventListener('click', goBack);
 
 function calcularValores() {
     const numeroInput = document.getElementById('numeroInput').value;
@@ -141,7 +160,7 @@ function calcularValores() {
 
     // Mostrar los valores generados
     document.getElementById('generated-values-title').style.display = 'block';
-    document.getElementById('generated-values-title').textContent = `Valores generados: ${numeros.join(', ')}`;
+    document.getElementById('generated-values-title').textContent = `Valores calculados: ${numeros.join(', ')}`;
 }
 
 function validarInput(input) {
@@ -388,7 +407,7 @@ function showRangeSuggestions(dailyValue, daysCount, percentage) {
     }
 
     // Mostrar resultados en el tab "resultado"
-    const resultadoTab = document.getElementById('opcion1');
+    const resultadoTab = document.getElementById('opcion1').innerHTML = opcion1;
     resultadoTab.style.display = 'flex';
     resultadoTab.style.flexDirection = 'column';
     resultadoTab.style.alignItems = 'center';
