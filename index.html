@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avimath - Calculadora Avanzada</title>
-    <link rel="stylesheet" href="selector.css">
+    <link rel="stylesheet" href="/avimath/client/public/css/selector.css">
 </head>
 <body>
     <header>
         <div class="navbar">
-            <div class="logo">Avimath</div>
+            <div class="logo" data-translate-key="logo">Avimath</div>
             <div id="togglecontainer">
                 <div class="toggle"></div>
             </div>
-            <select id="languageSelect" onchange="changeLanguage(this.value)">
+            <select id="languageSelect">
                 <option value="es">Español</option>
                 <option value="en">English</option>
             </select>
@@ -49,80 +49,80 @@
                 </div>
                 <div id="valores" class="contenido1" style="display:none;">
                     <form class="calculos">
-                        <input id="numeroInput" placeholder="Ingrese números" class="principio">
+                        <input id="numeroInput" placeholder="Ingrese números" class="principio" data-translate-key="ingrese_numeros">
                         <select id="operaciones">
-                            <option value="add">Suma</option>
-                            <option value="subtract">Resta</option>
-                            <option value="multiply">Multiplicación</option>
-                            <option value="divide">División</option>
+                            <option value="add" data-translate-key="suma">Suma</option>
+                            <option value="subtract" data-translate-key="resta">Resta</option>
+                            <option value="multiply" data-translate-key="multiplicacion">Multiplicación</option>
+                            <option value="divide" data-translate-key="division">División</option>
                         </select>
                         <label for="units"></label>
                         <select id="units">
-                            <option value="unit">Unidades</option>
-                            <option value="ten">Decenas</option>
-                            <option value="hundred">Centenas</option>
-                            <option value="thousand">Miles</option>
+                            <option value="unit" data-translate-key="unidades">Unidades</option>
+                            <option value="ten" data-translate-key="decenas">Decenas</option>
+                            <option value="hundred" data-translate-key="centenas">Centenas</option>
+                            <option value="thousand" data-translate-key="miles">Miles</option>
                         </select>
                         <button type="button" id="botonvalor1" onclick="calcularValores()" data-translate-key="calcular">Calcular</button>
                     </form>
                 </div>
                 <div id="resultados" class="contenido1" style="display:none;">
                     <div class="tooltip-container">
-                        <input type="number" id="percentage" class="segundo" placeholder=" Total %" step="0.01"><br>
+                        <input type="number" id="percentage" class="segundo" placeholder=" Total %" step="0.01" data-translate-key="total_porcentaje"><br>
                         <span class="tooltip">
                             <img src="https://img.icons8.com/?size=100&id=ml5uTt55Hkoc&format=png&color=000000" alt="">
-                            <span class="tooltiptext">Introduce el porcentaje total.</span>
+                            <span class="tooltiptext" data-translate-key="introduce_porcentaje_total">Introduce el porcentaje total.</span>
                         </span>
                     </div><br>
                     <div class="tooltip-container">
-                        <input type="number" id="dailyValue" class="segundo" placeholder=" Intentos totales"><br>
+                        <input type="number" id="dailyValue" class="segundo" placeholder=" Intentos totales" data-translate-key="intentos_totales"><br>
                         <span class="tooltip">
                             <img src="https://img.icons8.com/?size=100&id=ml5uTt55Hkoc&format=png&color=000000" alt="">
-                            <span class="tooltiptext">Introduce los intentos totales.</span>
+                            <span class="tooltiptext" data-translate-key="introduce_intentos_totales">Introduce los intentos totales.</span>
                         </span>
                     </div><br>
                     <div class="tooltip-container">
-                        <input type="number" id="daysCount" class="segundo" placeholder="Cantidad de días"><br>
+                        <input type="number" id="daysCount" class="segundo" placeholder="Cantidad de días" data-translate-key="cantidad_dias"><br>
                         <span class="tooltip">
                             <img src="https://img.icons8.com/?size=100&id=ml5uTt55Hkoc&format=png&color=000000" alt="">
-                            <span class="tooltiptext">Introduce la cantidad de días.</span>
+                            <span class="tooltiptext" data-translate-key="introduce_cantidad_dias">Introduce la cantidad de días.</span>
                         </span>
                     </div><br>
                     <div class="tooltip-container">
-                        <input type="text" id="range" class="segundo" placeholder="1-10"><br>
+                        <input type="text" id="range" class="segundo" placeholder="1-10" data-translate-key="rango"><br>
                         <span class="tooltip">
                             <img src="https://img.icons8.com/?size=100&id=ml5uTt55Hkoc&format=png&color=000000" alt="">
-                            <span class="tooltiptext">Introduce el rango (min - max).</span>
+                            <span class="tooltiptext" data-translate-key="introduce_rango">Introduce el rango (min - max).</span>
                         </span>
                     </div><br>
                     <button type="button" id="botonresult1" onclick="calculate()" data-translate-key="calcular">Calcular</button>
                 </div>
                 <div id="resultados2" class="contenido1" style="display:none;">
                     <div class="tooltip-container">
-                        <input type="number" id="x_value" class="segundo" placeholder=" Total"><br>
+                        <input type="number" id="x_value" class="segundo" placeholder=" Total" data-translate-key="total"><br>
                         <span class="tooltip">
                             <img src="https://img.icons8.com/?size=100&id=ml5uTt55Hkoc&format=png&color=000000" alt="">
-                            <span class="tooltiptext">Introduce el valor total.</span>
+                            <span class="tooltiptext" data-translate-key="introduce_valor_total">Introduce el valor total.</span>
                         </span>
                     </div>
                     <div class="tooltip-container">
-                        <input type="number" id="num_y" class="segundo" placeholder=" Valores"><br>
+                        <input type="number" id="num_y" class="segundo" placeholder=" Valores" data-translate-key="valores"><br>
                         <span class="tooltip">
                             <img src="https://img.icons8.com/?size=100&id=ml5uTt55Hkoc&format=png&color=000000" alt="">
-                            <span class="tooltiptext">Introduce el número de valores que deseas generar.</span>
+                            <span class="tooltiptext" data-translate-key="introduce_numero_valores">Introduce el número de valores que deseas generar.</span>
                         </span>
                     </div>
                     <div class="tooltip-container">
-                        <input type="text" id="range2" class="segundo" placeholder=" Rango"><br>
+                        <input type="text" id="range2" class="segundo" placeholder=" Rango" data-translate-key="rango"><br>
                         <span class="tooltip">
                             <img src="https://img.icons8.com/?size=100&id=ml5uTt55Hkoc&format=png&color=000000" alt="">
-                            <span class="tooltiptext">Introduce el rango (min - max) para cada valor generado. Ej: (2-4) </span>
+                            <span class="tooltiptext" data-translate-key="introduce_rango">Introduce el rango (min - max) para cada valor generado. Ej: (2-4) </span>
                         </span>
                     </div>
                     <button type="button" id="botonresult2" onclick="calculate2()" data-translate-key="calcular">Calcular</button>
                     <div id="results2"></div>
                 </div>
-                <button id="backButton" onclick="goBack()" style="display: none;">←</button>
+                <button id="backButton" onclick="goBack()" style="display: none;" data-translate-key="atras">←</button>
             </div>
             <div class="card2">
                 <div class="seccion2">
@@ -140,7 +140,7 @@
                     <canvas id="chart"></canvas>
                 </div>
                 <div id="opcion3" class="tab-content" style="display:none;">
-                    <p>Click to upload or drag and drop</p>
+                    <p data-translate-key="subir_archivo">Click to upload or drag and drop</p>
                     <div class="dropzone-area">
                         <div class="file-upload-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-cloud-upload" width="24"
@@ -153,7 +153,7 @@
                             </svg>
                         </div>
                         <input type="file" required id="upload-file" name="uploaded-file">
-                        <p class="file-info">No Files Selected</p>
+                        <p class="file-info" data-translate-key="no_archivo_seleccionado">No Files Selected</p>
                     </div>
                 </div>
             </div>
@@ -165,6 +165,6 @@
     </main>
     <footer></footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="selector.js"></script>
+    <script src="/avimath/client/public/js/selector.js"></script>
 </body>
 </html>
